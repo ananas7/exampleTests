@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Task 2</title>
+    </head>
+    <body>
+        <h1>Задание 2</h1>
+        <h2>Сделайте страницу, которая выводит в консоль «Я – JavaScript!» (без кавычек).</h2>
+        <p><input name="answer" id="file" type="file"><br /></p>
+        <p><input type="submit" onclick="check()" value="Отправить" /><br /></p>
+        <div id="test"></div>
+        <script>
+            function check() {
+                let result;
+                const scriptCheck = "\<script\>(function(){const originallog = console.log;console.log = function(txt) {arguments[0] = arguments[0] == 'Я - JavaScript!';originallog.apply(console, arguments);}})();\</script\>";
+                const input = document.getElementById('file');
+                file = input.files[0];
+                fr = new FileReader();
+                fr.onloadend = function() {
+                    let a = fr.result;
+                    const pos = fr.result.search('<script>');
+                    const newHtml = 'data:text/html;charset=UTF-8,' + convertData([a.slice(0, pos), scriptCheck, a.slice(pos)].join(''));
+                    console.log(newHtml);
+                    document.getElementById('test').innerHTML = '<iframe src="' + newHtml + '"><p>iframe</p></iframe>';
+                };
+                fr.readAsText(file);
+            }
+            function convertData(str) {
+                return str.replace(/\s{2,}/g, '')
+                   .replace(/%/g, '%25')
+                   .replace(/&/g, '%26')
+                   .replace(/#/g, '%23')
+                   .replace(/"/g, '%22')
+                   .replace(/'/g, '%27');
+            }
+        </script>
+    </body>
+</html>
