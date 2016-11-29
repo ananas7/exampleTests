@@ -2,10 +2,10 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Task 2</title>
+        <title>Task 3</title>
     </head>
     <body>
-        <h1>Задание 2</h1>
+        <h1>Задание 3</h1>
         <h2>Сделайте страницу, которая выводит в консоль «Я – JavaScript!» (без кавычек).</h2>
         <p><input name="answer" id="file" type="file"><br /></p>
         <p><input type="submit" onclick="check()" value="Отправить" /><br /></p>
@@ -16,7 +16,6 @@
                 function listener(event) {
                     result = event.data;
                     console.log('Задание выполнено ' + (result ? 'верно' : 'не верно'));
-                    result && (location = 'index3.html');
                 }
                 if (window.addEventListener) {
                     window.addEventListener("message", listener);
