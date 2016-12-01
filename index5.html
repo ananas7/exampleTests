@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Task 3</title>
+        <title>Task 5</title>
         <link rel=stylesheet href="lib/codemirror.css">
         <link rel=stylesheet href="theme/solarized.css">
         <script src="lib/codemirror.js"></script>
@@ -12,24 +12,24 @@
         <script src="mode/htmlmixed/htmlmixed.js"></script>
     </head>
     <body>
-        <h1>Задание 3</h1>
-        <h2>Что будет выведено?</h2>
+        <h1>Задание 5</h1>
+        <h2>Файл bigest.js загружается очень быстро, а файл smallest.js загружается очень медленно, какой из файлов загрузится быстрее?</h2>
         <textarea id="task">
-<script>console.<script>
-<script>log("A")<script></textarea>
+<script src="bigest.js"></script>
+<script src="smallest.js"></script></textarea>
         <div>
             <input type="radio" name="question1" value="1" />
-            <span>"A"</span>
+            <span>bigest.js</span>
         </div>
         <div>
             <input type="radio" name="question1" value="2" />
-            <span>"Uncaught SyntaxError: Unexpected end of input", "Uncaught ReferenceError: log is not defined"</span>
+            <span>smallest.js</span>
         </div>
         <div>
             <input type="radio" name="question1" value="3" />
-            <span>"Uncaught SyntaxError: Unexpected token &lt;"</span>
-        <p>
+            <span>одновременно</span>
         </div>
+        <p>
             <input type="submit" onclick="check()" value="Отправить" /><br />
         </p>
         <script>
@@ -43,11 +43,11 @@
         <script>
             function check() {
                 const answer = {
-                    q1: document.getElementsByName('question1')[1].checked,
+                    q1: document.getElementsByName('question1')[0].checked,
                 }
                 console.log('Вы дали ответ ' + (answer.q1 ? 'верно' : 'не верно'));
                 if (answer.q1) {
-                    location = 'index4.html';
+                    location = 'index6.html';
                 }
             }
         </script>
