@@ -19,32 +19,17 @@
             </div>
             <div>
                 <input type="radio" name="question1" value="3" />
-                <span>Программа, которая исходный код программы, при помощи специального инструмента, преобразуется в другой язык, как правило – в машинный код. Этот машинный код затем распространяется и запускается. При этом исходный код программы остаётся у разработчика.</span>
-            </div>
-        </section>
-        <section>
-            <h3>Что не умеет JavaScript?</h3>
-            <div>
-                <input type="radio" name="question2" value="1" />
-                <span>Реагировать на действия посетителя, обрабатывать клики мыши, перемещения курсора, нажатия на клавиатуру.</span>
-            </div>
-            <div>
-                <input type="radio" name="question2" value="2" />
-                <span>Получать и устанавливать cookie, запрашивать данные, выводить сообщения.</span>
-            </div>
-            <div>
-                <input type="radio" name="question2" value="3" />
-                <span>Работать с файлами системы: читать или записывать произвольные файлы на жесткий диск, копировать их или вызывать программы.</span>
+                <span>Программа, которая исходный код, при помощи специального инструмента преобразует в другой язык, как правило, в машинный код.</span>
             </div>
         </section>
         <section>
             <h3>Существуют ли возможность использовать новые стандарты ES6 или ES7 уже сейчас?</h3>
             <div>
-                <input type="radio" name="question3" value="1" />
+                <input type="radio" name="question2" value="1" />
                 <span>Нет</span>
             </div>
             <div>
-                <input type="radio" name="question3" value="2" />
+                <input type="radio" name="question2" value="2" />
                 <span>Да</span>
             </div>
         </section>
@@ -58,13 +43,11 @@
             function check() {
                 const answer = {
                     q1: document.getElementsByName('question1')[0].checked,
-                    q2: document.getElementsByName('question2')[2].checked,
-                    q3: document.getElementsByName('question3')[1].checked
+                    q2: document.getElementsByName('question2')[1].checked
                 }
                 console.log('Первый вопрос: ' + (answer.q1 ? 'верно' : 'не верно'));
                 console.log('Второй вопрос: ' + (answer.q2 ? 'верно' : 'не верно'));
-                console.log('Третий вопрос: ' + (answer.q3 ? 'верно' : 'не верно'));
-                if (answer.q1 && answer.q2 && answer.q3) {
+                if (answer.q1 && answer.q2) {
                     location = 'index2.html';
                 }
             }

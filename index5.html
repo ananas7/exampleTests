@@ -10,43 +10,84 @@
         <script src="mode/css/css.js"></script>
         <script src="mode/javascript/javascript.js"></script>
         <script src="mode/htmlmixed/htmlmixed.js"></script>
+        <script>
+            setTimeout(() => {console.log(1)}, 3000);
+        </script>
+        <script>
+            console.log(2)
+        </script>
     </head>
     <body>
         <h1>Задание 5</h1>
-        <h2>Файл bigest.js загружается очень быстро, а файл smallest.js загружается очень медленно, какой из файлов загрузится быстрее?</h2>
-        <textarea id="task">
-<script src="bigest.js"></script>
+        <h2>Файл biggest.js:</h2>
+        <textarea id="task1">setTimeout(() => {console.log(1)}, 3000);</textarea>
+        <h2>Файл smallest.js:</h2>
+        <textarea id="task2">console.log(2)</textarea>
+        <h2>Что будет выведено в консоль, после выполнения кода?</h2>
+        <textarea id="task3">
+<script src="biggest.js"></script>
 <script src="smallest.js"></script></textarea>
         <div>
             <input type="radio" name="question1" value="1" />
-            <span>bigest.js</span>
+            <span>1</span><br />
+            <span>2</span>
         </div>
         <div>
             <input type="radio" name="question1" value="2" />
-            <span>smallest.js</span>
+            <span>2</span><br />
+            <span>1</span>
         </div>
         <div>
             <input type="radio" name="question1" value="3" />
-            <span>одновременно</span>
+            <span>Ошибка</span>
+        </div>
+        <p>
+            <h2>Какой из файлов, из предыдущего задания, первый начнёт исполняться?</h2>
+        </p>
+        <div>
+            <input type="radio" name="question2" value="1" />
+            <span>biggest.js</span>
+        </div>
+        <div>
+            <input type="radio" name="question2" value="2" />
+            <span>smallest.js</span>
+        </div>
+        <div>
+            <input type="radio" name="question2" value="3" />
+            <span>Одновременно</span>
         </div>
         <p>
             <input type="submit" onclick="check()" value="Отправить" /><br />
         </p>
         <script>
-          var editor = CodeMirror.fromTextArea(document.getElementById("task"), {
-            lineNumbers: true,
-            mode: "text/html",
-            matchBrackets: true,
-            theme: "solarized light"
-          });
+            let editor1 = CodeMirror.fromTextArea(document.getElementById("task1"), {
+                lineNumbers: true,
+                mode: "javascript",
+                matchBrackets: true,
+                theme: "solarized light"
+            });
+            let editor2 = CodeMirror.fromTextArea(document.getElementById("task2"), {
+                lineNumbers: true,
+                mode: "javascript",
+                matchBrackets: true,
+                theme: "solarized light"
+            });
+            let editor3 = CodeMirror.fromTextArea(document.getElementById("task3"), {
+                lineNumbers: true,
+                mode: "text/html",
+                matchBrackets: true,
+                theme: "solarized light"
+            });
         </script>
         <script>
             function check() {
                 const answer = {
-                    q1: document.getElementsByName('question1')[0].checked,
+                    q1: document.getElementsByName('question1')[1].checked,
+                    q2: document.getElementsByName('question2')[0].checked,
                 }
-                console.log('Вы дали ответ ' + (answer.q1 ? 'верно' : 'не верно'));
-                if (answer.q1) {
+                console.log('Первый ответ ' + (answer.q1 ? 'верно' : 'не верно'));
+                console.log('Второй ответ ' + (answer.q2 ? 'верно' : 'не верно'));
+                if (answer.q1 && answer.q2) {
                     location = 'index6.html';
                 }
             }
