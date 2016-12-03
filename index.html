@@ -11,7 +11,7 @@
             <h3>Что такое интерпретатор?</h3>
             <div>
                 <input type="radio" name="question1" value="1" />
-                <span>Программа, выполняющая пооператорный (покомандный, построчный) анализ, обработку и тут же выполнение исходной программы.</span>
+                <span>Программа, осуществляющая трансляцию программы, составленной на исходном языке высокого уровня, в эквивалентную программу на низкоуровневом языке, близком машинному коду.</span>
             </div>
             <div>
                 <input type="radio" name="question1" value="2" />
@@ -37,14 +37,14 @@
             <input type="submit" onclick="check()" value="Отправить" /><br />
         </p>
         <p>
-            Ответы появятся в консоле.
+            Ошибки появятся в консоле.
         </p>
         <script>
             function check() {
                 const answer = {
                     q1: document.getElementsByName('question1')[0].checked,
                     q2: document.getElementsByName('question2')[1].checked
-                }
+                };
                 console.log('Первый вопрос: ' + (answer.q1 ? 'верно' : 'не верно'));
                 console.log('Второй вопрос: ' + (answer.q2 ? 'верно' : 'не верно'));
                 if (answer.q1 && answer.q2) {

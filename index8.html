@@ -2,11 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Task 2</title>
+        <title>Task 8</title>
     </head>
     <body>
-        <h1>Задание 2</h1>
-        <h2>Сделайте страницу, которая выводит в консоль только «Я – JavaScript!» (без кавычек).</h2>
+        <h1>Задание 8</h1>
+        <h2>Сделайте страницу, которая выводит в консоль только один объект, в котором есть 2 поля: subject и action. В поле subject должно быть значение "javascript", а в поле action - "learn" (без кавычек).</h2>
         <p><input name="answer" id="file" type="file"><br /></p>
         <p><input type="submit" onclick="check()" value="Отправить" /><br /></p>
         <p>
@@ -20,7 +20,7 @@
                     if (result !== false) {
                         result = event.data;
                         console.log('Задание выполнено ' + (result ? 'верно' : 'не верно'));
-                        result && (location = 'index3.html');
+                        result && (location = 'index9.html');
                     } else {
                         console.warn('Вы выводите в консоль несколько раз');
                     }
@@ -31,7 +31,7 @@
                     window.attachEvent("onmessage", listener);
                 }
                 const errorHandler = "\<script\>window.onerror = function (message, source, lineNr) {console.error('В вашем коде ошибки. Попробуйте снова.');return true;};\</script\>";
-                const scriptCheck = "\<script\>(function(){let sendData = false;const originallog = console.log;console.log = function(txt) {const answer = arguments[0] == 'Я - JavaScript!';parent.postMessage(answer, '*');sendData = true;};setTimeout(() => {(!sendData) && parent.postMessage(false, '*')}, 0);})();\</script\>";
+                const scriptCheck = "\<script\>(function(){let sendData = false;const originallog = console.log;console.log = function(txt) {const answer = (Object.keys(arguments[0]).length == 2 && arguments[0].subject == 'javascript' && arguments[0].action == 'learn');parent.postMessage(answer, '*');sendData = true;};setTimeout(() => {(!sendData) && parent.postMessage(false, '*')}, 0);})();\</script\>";
                 const input = document.getElementById('file');
                 file = input.files[0];
                 fr = new FileReader();

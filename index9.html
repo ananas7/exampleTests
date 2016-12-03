@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Task 6</title>
+        <title>Task 9</title>
         <link rel=stylesheet href="lib/codemirror.css">
         <link rel=stylesheet href="theme/solarized.css">
         <script src="lib/codemirror.js"></script>
@@ -12,55 +12,82 @@
         <script src="mode/htmlmixed/htmlmixed.js"></script>
     </head>
     <body>
-        <h1>Задание 6</h1>
+        <h1>Задание 9</h1>
         <h2>Что будет выведено в консоль?</h2>
         <textarea id="task1">
-console.log(1
-+
-1)</textarea>
+let a = 1;
+let b = 1;
+let c, d;
+c = ++a;
+d = b++;
+console.log(c);
+console.log(d);
+c = (2 + ++a);
+d = (2 + b++);</textarea>
         <div>
             <input type="radio" name="question1" value="1" />
-            <span>Ошибка</span>
+            <span>2</span><br />
+            <span>2</span>
         </div>
         <div>
             <input type="radio" name="question1" value="2" />
+            <span>1</span><br />
             <span>2</span>
         </div>
         <div>
             <input type="radio" name="question1" value="3" />
+            <span>2</span><br />
             <span>1</span>
         </div>
-        <textarea id="task2">[1, 2].map(x => console.log(x))</textarea>
+        <textarea id="task2">
+let a = 1;
+let b = 1;
+let c, d;
+c = ++a;
+d = b++;
+c = (2 + ++a);
+d = (2 + b++);
+console.log(a);
+console.log(b);</textarea>
         <div>
             <input type="radio" name="question2" value="1" />
-            <span>Ошибка</span>
+            <span>1</span><br />
+            <span>2</span>
         </div>
         <div>
             <input type="radio" name="question2" value="2" />
-            <span>1</span><br  />
-            <span>2</span><br  />
+            <span>2</span><br />
+            <span>1</span>
         </div>
         <div>
             <input type="radio" name="question2" value="3" />
-            <span>1</span>
+            <span>3</span><br />
+            <span>3</span>
         </div>
-        <textarea id="task3">console.log(1
-+
-1)
-[1, 2].map(x => console.log(x))</textarea>
+        <textarea id="task3">
+let a = 1;
+let b = 1;
+let c, d;
+c = ++a;
+d = b++;
+c = (2 + ++a);
+d = (2 + b++);
+console.log(c);
+console.log(d);</textarea>
         <div>
             <input type="radio" name="question3" value="1" />
-            <span>Ошибка</span>
+            <span>3</span><br />
+            <span>3</span>
         </div>
         <div>
             <input type="radio" name="question3" value="2" />
-            <span>1</span>
+            <span>5</span><br />
+            <span>4</span>
         </div>
         <div>
             <input type="radio" name="question3" value="3" />
-            <span>1</span><br />
-            <span>1</span><br />
-            <span>2</span><br />
+            <span>4</span><br />
+            <span>5</span>
         </div>
         <p>
             <input type="submit" onclick="check()" value="Отправить" /><br />
@@ -93,15 +120,15 @@ console.log(1
         <script>
             function check() {
                 const answer = {
-                    q1: document.getElementsByName('question1')[1].checked,
-                    q2: document.getElementsByName('question2')[1].checked,
-                    q3: document.getElementsByName('question3')[0].checked
+                    q1: document.getElementsByName('question1')[2].checked,
+                    q2: document.getElementsByName('question2')[2].checked,
+                    q3: document.getElementsByName('question3')[1].checked
                 }
                 console.log('Первый вопрос: ' + (answer.q1 ? 'верно' : 'не верно'));
                 console.log('Второй вопрос: ' + (answer.q2 ? 'верно' : 'не верно'));
                 console.log('Третий вопрос: ' + (answer.q3 ? 'верно' : 'не верно'));
                 if (answer.q1 && answer.q2 && answer.q3) {
-                    location = 'index7.html';
+                    location = 'index10.html';
                 }
             }
         </script>

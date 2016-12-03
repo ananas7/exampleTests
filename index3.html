@@ -28,13 +28,16 @@
         <p>
             <input type="submit" onclick="check()" value="Отправить" /><br />
         </p>
+        <p>
+            Ошибки появятся в консоле.
+        </p>
         <script>
-          var editor = CodeMirror.fromTextArea(document.getElementById("task"), {
-            lineNumbers: true,
-            mode: "text/html",
-            matchBrackets: true,
-            theme: "solarized light"
-          });
+            let editor = CodeMirror.fromTextArea(document.getElementById("task"), {
+                lineNumbers: true,
+                mode: "text/html",
+                matchBrackets: true,
+                theme: "solarized light"
+            });
         </script>
         <script>
             function check() {
